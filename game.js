@@ -56,7 +56,9 @@ nextRoundButton.addEventListener('click', () => {
   advanceRound();
   // Display the new round number
   roundNumberDisplay.innerText = currentRoundNumber;
-
+  // code below fixed when human.input.value=10, then reset button, '+' was disable
+  addButton.removeAttribute('disabled');
+  subtractButton.setAttribute('disabled', true);
   // Set the correct disabled state for the buttons
   nextRoundButton.setAttribute('disabled', true);
   guessButton.removeAttribute('disabled');
@@ -64,7 +66,7 @@ nextRoundButton.addEventListener('click', () => {
   // Reset the guess input box and the target number display:
   targetNumberDisplay.innerText = '?';
   guessButton.innerText = 'Make a Guess';
-  humanGuessInput.value = '';
+  humanGuessInput.value = 0;
   computerGuessDisplay.innerText = '?';
   computerWinsDisplay.innerText = '';
   guessButton.classList.remove('winning-text');

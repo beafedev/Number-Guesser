@@ -28,4 +28,7 @@ function updateScore(str) {
     }
 }
 
-function advanceRound()
+function advanceRound() {
+    currentRoundNumber += 1;
+    humanGuessInput.innerHTML = 0;
+}
